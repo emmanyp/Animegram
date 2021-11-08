@@ -8,6 +8,13 @@
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
+      <a href="/profiles">
+        <button type="submit">Animeists</button> </a>
+        
+      <form action="/animes/search" method="POST">
+        <input name="query" type="text" placeholder="Search for Anime">
+        <button type="submit">Search</button>
+      </form>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
