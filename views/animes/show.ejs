@@ -2,6 +2,16 @@
 <%- include('../partials/nav') %>
   <main>
     <h2><%= apiResults.title %></h2>
+    <img src="<%= apiResults.image_url%>">
+    <p><%= apiResults.synopsis %></p>
+    <h2><%= apiResults.type %></h2>
+    <h2><%= apiResults.episodes %></h2>
+    <h2><%= apiResults.score %></h2>
+    <% if (!uaerHasAnime) { %>
+      <form action="/animes/<%=  %> ">
+
+      </form>
+    <% } %>
     
       
   </main>

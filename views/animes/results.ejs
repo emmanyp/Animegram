@@ -5,8 +5,7 @@
         <h1>Search Results</h1>
           <%results.forEach(anime => {%>
             <h2><%= anime.title%></h2>
-            <img src="<%= anime.image_url%>">
-            <a href="/animes/<%= anime.mal_id %> ">info</a>
+            <a href="/animes/<%= anime.mal_id %> "><img src="<%= anime.image_url%>"></a>
           <% }) %>
         <% } %>
     </main>
