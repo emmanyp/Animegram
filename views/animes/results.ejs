@@ -6,10 +6,7 @@
           <%results.forEach(anime => {%>
             <h2><%= anime.title%></h2>
             <img src="<%= anime.image_url%>">
-            <h2><%= anime.synopsis%></h2>
-            <h2><%= anime.type%></h2>
-            <h2><%= anime.episodes%></h2>
-            <h2><%= anime.rated%></h2>
+            <a href="/animes/<%= anime.mal_id %> ">info</a>
           <% }) %>
         <% } %>
     </main>
