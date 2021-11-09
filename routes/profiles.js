@@ -11,7 +11,8 @@ router.get('/', isLoggedIn, profilesCtrl.index);
 router.get('/:id', isLoggedIn, profilesCtrl.show);
 router.get('/:id/anime', isLoggedIn, profilesCtrl.animeIdx);
 router.get('/:profileId/anime/:animeId', isLoggedIn, profilesCtrl.animeShow);
-router.post('/anime', isLoggedIn, profilesCtrl.addToCollection);
+router.post('/anime', isLoggedIn, profilesCtrl.addToCollection)
+router.delete('/:profileId/anime/:animeId', isLoggedIn, profilesCtrl.delete);
 
 
 

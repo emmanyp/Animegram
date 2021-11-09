@@ -11,6 +11,14 @@
           <img src="<%= anime.imageUrl %>" alt="<%= anime.name %>">
         </a>
       </div>
+      <% if (user.profile._id.equals(profile._id)) { %>
+        <form action="/profiles/<%= profile._id %>/anime/edit" method="GET">
+          <button class="btn" type="submit">Edit this Anime</button>
+        </form>
+        <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete this Anime💀</button>
+        </form>
+        <% } %>
       <% }) %>
 
     
