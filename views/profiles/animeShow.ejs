@@ -18,6 +18,63 @@
       <h2>
         <%= anime.score %>
       </h2>
+        <h2><%= anime.rank %> </h2>
+        
+        <h2><%= anime.airing %>  </h2>
+        <h2>Reviews</h2>
+        <% if (user.profile._id.equals(profile._id) || user.isAdmin) { %>
+          <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews" method="POST">
+              <label for="content-textarea">Review:</label>
+              <textarea name="content" id="content-textarea"></textarea>
+              <label for="rating-select">Rating:</label>
+              <select name="rating" id="rating-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+              <button type="submit">Add Review</button>
+            </form>
+              <% } %>
+        <% if (anime.reviews.length) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Review</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let total=0 %>
+                <% profile.reviews.forEach(function(review){ %>
+                  <% total +=review.rating %>
+                    <tr>
+                      <td>
+                        <%= review.createdAt.toLocaleDateString() %>
+                      </td>
+                      <td>
+                        <%= review.content %>
+                      </td>
+                      <td>
+                        <%= review.rating %>
+                      </td>
+                    </tr>
+                    <% }) %>
+                      <tr>
+                        <td colspan="2"></td>
+                        <td>
+                          <strong>
+                            <%= averageReviewScore %>
+                          </strong>
+                        </td>
+                      </tr>
+            </tbody>
+          </table>
+          <% } else { %>
+            <h3>No Reviews Yet</h3>
+            <% } %>
       
     </main>
     <%- include('../partials/footer') %>

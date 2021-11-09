@@ -16,6 +16,7 @@ const animeSchema = new Schema(
 	{
 		title: String,
 		rank: Number,
+		score: Number,
     synopsis: String,
 		episodes: Number,
 		imageUrl: String,
