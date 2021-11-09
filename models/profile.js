@@ -17,6 +17,7 @@ const animeSchema = new Schema(
 		title: String,
 		malId: Number,
 		rank: Number,
+    synopsis: String,
 		episodes: Number,
 		imageUrl: String,
 		reviews: [reviewSchema],

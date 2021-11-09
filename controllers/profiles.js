@@ -48,10 +48,22 @@ function addToCollection(req, res) {
 		});
 }
 
+function animeIdx(req, res) {
+	Profile.findById(req.params.id).
+	then((profile) => {
+		res.render('profiles/animeIdx', {
+			title: `${profile.name}'s Anime List`,
+			user: req.user,
+			profile,
+		});
+	});
+}
+
 
 
 export {
   index,
   show,
 	addToCollection,
+	animeIdx,
 }

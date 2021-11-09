@@ -15,6 +15,7 @@
         <input name="query" type="text" placeholder="Search for Anime">
         <button type="submit">Search</button>
       </form>
+      <a href="/profiles/<%= user.profile._id %>/anime">My Anime</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
