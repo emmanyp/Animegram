@@ -1,18 +1,39 @@
-<%- include('../partials/html-head') %>
+<!-- <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
   <main>
+    
     <h2><%= apiResults.title %></h2>
     <img src="<%= apiResults.image_url%>">
     <p><%= apiResults.synopsis %></p>
     <h2><%= apiResults.type %></h2>
     <h2><%= apiResults.episodes %></h2>
     <h2><%= apiResults.score %></h2>
-    <% if (!uaerHasAnime) { %>
-      <form action="/animes/<%=  %> ">
 
+    <% if (!userHasAnime) { %>
+      <form action="/animes/<%= apiResults.mal_id %>/addToList?_method=PATCH" method="POST">
+
+        <input type="text" name="title" hidden value="<%= apiResults.title %> ">
+
+        <input type="text" name="malId" hidden value="<%= apiResults.mal_id %> ">
+
+        <input type="text" name="rank" hidden value="<%= apiResults.rank %> ">
+
+        <input type="text" name="episodes" hidden value="<%= apiResults.episodes %> ">
+
+        <input type="text" name="airing" hidden value="<%= apiResults.airing %> "> 
+
+        <input type="text" name="imageUrl" hidden value="<%= apiResults.image_url%>"> 
+        <input type="text" name="collectedBy" hidden> 
+        
+        <button>Add To List </button>
+      </form>
+    <#% } %>
+    <#% if (userHasAnime) { %>
+      <form action="/animes/<#%= apiResults.mal_id %>/removeFromList?_method=DELETE" method="POST">
+        <button>Remove From List</button>
       </form>
     <% } %>
-    
+    <p>DO I have this anime? <%= userHasAnime? "yes" : "no" %> </p>
       
   </main>
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> -->

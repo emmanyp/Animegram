@@ -1,13 +1,33 @@
 <%- include('../partials/html-head') %>
   <%- include('../partials/nav') %>
-  <% if (results) {%> 
     <main>
         <h1>Search Results</h1>
-          <%results.forEach(anime => {%>
+          <%anime.forEach(anime => {%>
             <h2><%= anime.title%></h2>
-            <a href="/animes/<%= anime.mal_id %> "><img src="<%= anime.image_url%>"></a>
+            <img src="<%= anime.image_url%>" alt='<%= anime.name %> '>
+            <p><%= anime.synopsis %></p>
+            <h2><%= anime.type %></h2>
+            <h2>
+              <%= anime.episodes %>
+            </h2>
+            <h2>
+              <%= anime.score %>
+            </h2>
+            <form action="/profiles/anime" method="POST">
+            <input type="text" name="title" hidden value="<%= anime.title %> ">
+            
+            <input type="text" name="malId" hidden value="<%= anime.mal_id %> ">
+            
+            <input type="text" name="rank" hidden value="<%= anime.rank %> ">
+            
+            <input type="text" name="episodes" hidden value="<%= anime.episodes %> ">
+            
+            <input type="text" name="airing" hidden value="<%= anime.airing %> ">
+            
+            <input type="text" name="imageUrl" hidden value="<%= anime.image_url%>">
+            <button type="submit">Add to Collection</button>
+            </form>
           <% }) %>
-        <% } %>
     </main>
     
     <%- include('../partials/footer') %>

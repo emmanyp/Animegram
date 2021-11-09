@@ -1,34 +1,36 @@
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema(
-	{
-		content: String,
-		rating: Number,
-		author: { type: Schema.Types.ObjectId, ref: 'Profile' },
-	},
-	{
-		timestamps: true,
-	}
-)
+// const reviewSchema = new Schema(
+// 	{
+// 		content: String,
+// 		rating: Number,
+// 		author: { type: Schema.Types.ObjectId, ref: 'Profile' },
+// 	},
+// 	{
+// 		timestamps: true,
+// 	}
+// )
 
-const animeSchema = new Schema({
-	title: String,
-	malId: Number,
-	rating: String,
-  rank: Number,
-  epsoidos: Number,
-  airing: Boolean,
-	imageUrl: String,
-	owner: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
-  reviews:[reviewSchema]
-},{
-	timestamps: true
-});
+// const animeSchema = new Schema(
+// 	{
+// 		title: String,
+// 		malId: Number,
+// 		rank: Number,
+// 		episodes: Number,
+// 		airing: Boolean,
+// 		imageUrl: String,
+// 		collectedBy: {type: Schema.Types.ObjectId, ref: 'Profile'},
+// 		reviews: [reviewSchema],
+// 	},
+// 	{
+// 		timestamps: true,
+// 	}
+// );
 
-const Anime = mongoose.model('Anime', animeSchema);
+// const Anime = mongoose.model('Anime', animeSchema);
 
-export { 
-  Anime 
-};
+// export { 
+//   Anime 
+// };

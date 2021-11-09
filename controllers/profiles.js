@@ -3,6 +3,7 @@ import { Profile } from '../models/profile.js';
 function index(req, res) {
 	Profile.find({})
 		.then((profiles) => {
+			console.log(profiles)
 			res.render('profiles/index', {
 				profiles,
 				title: 'Profiles',
@@ -33,8 +34,24 @@ function show(req, res) {
 		});
 }
 
+function addToCollection(req, res) {
+	Profile.findById(req.user.profile._id)
+	.then((profile) => {
+		profile.anime.push(req.body);
+		profile.save()
+		.then(() => {
+			res.redirect('/');
+		});
+	}).catch((err) => {
+			console.log(err);
+			res.redirect(`/profiles/${req.user.profile._id}`);
+		});
+}
+
+
 
 export {
   index,
   show,
+	addToCollection,
 }
