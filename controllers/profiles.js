@@ -59,11 +59,26 @@ function animeIdx(req, res) {
 	});
 }
 
-
+function animeShow(req, res) {
+	Profile.findById(req.params.profileId)
+	.then((profile) => {
+		console.log(profile);
+		let index = profile.anime.findIndex(
+			(item) => item._id == req.params.animeId
+		);
+		res.render('profiles/animeShow', {
+			title: `${profile.name}'s Anime`,
+			user: req.user,
+			profile,
+			anime: profile.anime[index],
+		});
+	});
+}
 
 export {
   index,
   show,
 	addToCollection,
 	animeIdx,
+	animeShow,
 }
