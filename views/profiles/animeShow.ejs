@@ -22,7 +22,7 @@
         
         <h2><%= anime.airing %>  </h2>
         <h2>Reviews</h2>
-        <% if (isSelf) { %>
+        <% if (user) { %>
           <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews" method="POST">
               <label for="content-textarea">Review:</label>
               <textarea name="content" id="content-textarea"></textarea>
@@ -38,9 +38,9 @@
             </form>
               <% } %>
               <% if (profile.reviews.length) { %>
-                <h2>
-                  <%= isSelf ? "You have" : `${profile.name} has`%> reviews! Here they are!
-                </h2>
+                <!-- <h2>
+                  <#%= user? "You have" : `${profile.name} has`%> reviews! Here they are!
+                </h2> -->
                 <table>
                   <thead>
                     <tr>
@@ -50,7 +50,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% let total=0 %>
                       <% anime.reviews.forEach(function(review){ %>
 
                           <tr>
@@ -65,14 +64,6 @@
                             </td>
                           </tr>
                           <% }) %>
-                            <tr>
-                              <td colspan="2"></td>
-                              <td>
-                                <strong>
-                                  <%= averageReviewScore %>
-                                </strong>
-                              </td>
-                            </tr>
                   </tbody>
                 </table>
                 <% } else { %>
