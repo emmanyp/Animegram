@@ -18,9 +18,6 @@
       <h2>
         <%= anime.score %>
       </h2>
-        <h2><%= anime.rank %> </h2>
-        
-        <h2><%= anime.airing %>  </h2>
         <h2>Reviews</h2>
         <% if (user) { %>
           <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews" method="POST">
@@ -37,10 +34,10 @@
               <button type="submit">Add Review</button>
             </form>
               <% } %>
-              <% if (profile.reviews.length) { %>
-                <!-- <h2>
-                  <#%= user? "You have" : `${profile.name} has`%> reviews! Here they are!
-                </h2> -->
+              <% if (anime.reviews.length) { %>
+                  <h2>
+                  <%= user? "You have" : `${profile.name} has`%> reviews! Here they are!
+                </h2> 
                 <table>
                   <thead>
                     <tr>
@@ -51,7 +48,6 @@
                   </thead>
                   <tbody>
                       <% anime.reviews.forEach(function(review){ %>
-
                           <tr>
                             <td>
                               <%= review.createdAt.toLocaleDateString() %>
