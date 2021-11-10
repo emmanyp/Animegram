@@ -14,8 +14,7 @@ router.get('/:profileId/anime/:animeId', isLoggedIn, profilesCtrl.animeShow);
 router.post('/anime', isLoggedIn, profilesCtrl.addToCollection)
 router.post('/:profileId/anime/:animeId/reviews', profilesCtrl.createReview);
 router.delete('/:profileId/anime/:animeId', isLoggedIn, profilesCtrl.delete);
-
-
+router.delete('/:profileId/anime/:animeId/reviews/:reviewId',isLoggedIn,	profilesCtrl.deleteReview);
 
 
 export { router };

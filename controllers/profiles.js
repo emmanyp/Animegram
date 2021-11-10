@@ -3,7 +3,7 @@ import { Profile } from '../models/profile.js';
 function index(req, res) {
 	Profile.find({})
 		.then((profiles) => {
-			console.log(profiles)
+			// console.log(profiles)
 			res.render('profiles/index', {
 				profiles,
 				title: 'Profiles',
@@ -61,7 +61,7 @@ function animeIdx(req, res) {
 
 function animeShow(req, res) {
 	Profile.findById(req.params.profileId).then((profile) => {
-		console.log(profile);
+		// console.log(profile);
 		let index = profile.anime.findIndex(
 			(item) => item._id == req.params.animeId
 		);
@@ -77,9 +77,9 @@ function animeShow(req, res) {
 function deleteAnime(req, res) {
   Profile.findById(req.user.profile._id)
 		.then((profile) => {
-			
 				profile.anime.remove(req.params.animeId);
-				profile.save().then(() => {
+				profile.save()
+				.then(() => {
 					res.redirect(`/profiles/${req.user.profile._id}`);
 				});
 		})
@@ -93,9 +93,7 @@ function createReview(req, res) {
 	Profile.findById(req.user.profile._id)
 		.then((profile) => {
 			const anime = profile.anime.id(req.params.animeId)
-			console.log(anime);
 			anime.reviews.push(req.body)
-			console.log(anime);
 			profile.save();
 		})
 		.catch((err) => {
@@ -104,6 +102,23 @@ function createReview(req, res) {
 		});
 }
 
+function deleteReview(req, res) {
+	console.log('HERE')
+		Profile.findById(req.user.profile._id)
+			.then((profile) => {
+				const anime = profile.anime.id(req.params.animeId)
+				// console.log(anime)
+				anime.reviews.remove({ _id: req.params.reviewId })
+				profile.save()
+				.then(() => {
+					res.redirect(`/profiles/${req.user.profile._id}`);
+				})
+			})
+			.catch((err) => {
+				console.log(err);
+				res.redirect(`/profiles/${req.user.profile._id}`);
+			});
+}
 
 export {
   index,
@@ -113,15 +128,5 @@ export {
 	animeShow,
 	deleteAnime as delete,
 	createReview,
+	deleteReview,
 }
-
-// console.log('HAYYYYY');
-// 	Profile.findById(req.params.profileId)
-// 	.then(Profile => {
-// 		profile.reviews.push(req.body);
-// 		console.log(movie);
-// 		profile.save()
-// 			res.redirect(
-// 				`/profiles/${req.params.profileId}/anime/${req.params.animeId}`
-// 	    })	
-// 		})

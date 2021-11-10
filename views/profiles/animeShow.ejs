@@ -25,11 +25,12 @@
               <textarea name="content" id="content-textarea"></textarea>
               <label for="rating-select">Rating:</label>
               <select name="rating" id="rating-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
+                <option disabled selected value> -- select an option -- </option>
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
               </select>
               <button type="submit">Add Review</button>
             </form>
@@ -58,8 +59,15 @@
                             <td>
                               <%= review.rating %>
                             </td>
+                            <td>
+                              <% if (user.profile._id.equals(profile._id)) { %>
+                                <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                  <button class="btn" type="submit">Delete 💀</button>
+                                </form>
+                                <% } %>
+                            </td>
                           </tr>
-                          <% }) %>
+                      <% }) %>
                   </tbody>
                 </table>
                 <% } else { %>
