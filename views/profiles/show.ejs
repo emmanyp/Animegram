@@ -7,7 +7,17 @@
           <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %> avatar">
         </div>
         <% } %>
-          <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+        <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+        <% profile.anime.forEach(an => {%>
+          <div>
+              <h2>
+                <%= an.title %>
+              </h2>
+              <img src="<%= an.imageUrl %>" alt="<%= an.name %>">
+            </a>
+          </div>
+              <% }) %>
+
     </main>
 
     <%- include('../partials/footer') %>

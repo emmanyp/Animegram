@@ -60,8 +60,8 @@ function animeIdx(req, res) {
 }
 
 function animeShow(req, res) {
-	Profile.findById(req.params.profileId)
-	.then((profile) => {
+	Profile.findById(req.params.profileId).then((profile) => {
+		console.log(profile);
 		let index = profile.anime.findIndex(
 			(item) => item._id == req.params.animeId
 		);
@@ -90,15 +90,21 @@ function deleteAnime(req, res) {
 }
 
 function createReview(req, res) {
-	// Profile.findById(req.params.profileId)
-	// .then(profile => {
-	// 			profile.reviews.push(req.body);
-	// 			profile.save()
-	// 		  .then(()=> {
-	// 			es.redirect(`/profiles/${req.params.profileId}/anime/${req.params.animeId}`)
-  //   })
-	// })
+	Profile.findById(req.user.profile._id)
+		.then((profile) => {
+			const anime = profile.anime.id(req.params.animeId)
+			console.log(anime);
+			anime.reviews.push(req.body)
+			console.log(anime);
+			profile.save();
+		})
+		.catch((err) => {
+			console.log(err);
+			res.redirect(`/profiles/${req.user.profile._id}`);
+		});
 }
+
+
 export {
   index,
   show,
