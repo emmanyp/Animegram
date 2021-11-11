@@ -19,8 +19,7 @@ html {
 
 body {
   /* Use a system font, if none are available use an available sans-sarif font */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:'Zen Antique Soft', "Helvetica Neue", sans-serif;
   margin: 0;
   background:url('https://media1.giphy.com/media/WeyqDp1shHe7u/giphy.gif?cid=ecf05e47yigcbiamd3w6se8l3hmdcxzb4qf0ftqekt74ae0g&rid=giphy.gif&ct=g') center  270px;
   background-repeat: no-repeat;
@@ -37,18 +36,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
-  -webkit-filter: blur(1px);
--moz-filter: blur(1px);
--o-filter: blur(1px);
--ms-filter: blur(1px);
-filter: blur(1px);
-opacity: 0.9;
 }
-
-nav > * {
-  opacity: 1;
-}
-
 main {
   display: flex;
   align-items: center;
@@ -68,7 +56,6 @@ nav > a {
   align-items: center;
   justify-content: center;
 }
-
 .Logout{
   border: 0;
   padding: 0;
@@ -77,9 +64,12 @@ nav > a {
   width: 100px;
   color: #fff;
   background: transparent;
-  border: 1px solid #fff;
-  border-radius: 4px 0 0 4px;
   font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
 
 }
 .Animeists{
@@ -90,8 +80,15 @@ nav > a {
   width: 100px;
   color: #fff;
     background: transparent;
+    font-weight: bolder;
     border: 1px solid #fff;
     border-radius: 3px 0 0 3px;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
 }
 .MyAnime{
     border: 0;
@@ -101,15 +98,15 @@ nav > a {
     width: 100px;
     color: #fff;
     background: transparent;
-    border: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
 }
 .Home{
-  /* outline: yellow;
-  border:3px solid rgb(214, 102, 11) ;
-  width: 100px;
-  height: 50px;
-  border-radius: 5px; */
     border: 0;
     padding: 0;
     cursor: pointer;
@@ -117,9 +114,13 @@ nav > a {
     width: 100px;
     color: #fff;
     background: transparent;
-    border: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
-    border-radius: 3px 0 0 3px;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
 }
 .Search {
   width: 300px;
@@ -130,6 +131,12 @@ nav > a {
   border-radius:  3px;
   border: 1px solid #fff;
   border-radius: 3px 0 0 3px;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.6);
+
 }
   input {
     width: 195px;
@@ -150,8 +157,13 @@ nav > a {
     width: 100px;
     color: #fff;
     background: transparent;
-    border: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
   }
   button:hover {
       background: #fff;
