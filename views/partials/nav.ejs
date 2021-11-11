@@ -1,27 +1,28 @@
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
+
+<link rel="stylesheet" href="/stylesheets/siwg.css">
+<link rel="stylesheet" href="/stylesheets/siwg.css">
 </head>
 <body>
   <nav>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-      <a href="/profiles">
-        <button type="submit">Animeists</button> </a>
+        <% if (user) { %>
+          <a href="/auth/logout">
+            <button class="Logout" type="submit">Logout</button>
+          </a>
+          <a href="/profiles">
+        <button class="Animeists" type="submit">Animeists</button> </a>
         
-      <form action="/animes/search" method="POST">
-        <input name="query" type="text" placeholder="Search for Anime">
-        <button type="submit">Search</button>
+      <form class="Search" action="/animes/search" method="POST">
+        <input class="searchTerm" name="query" type="text" placeholder="Search for Anime">
+        <button class="searchButton " type="submit">Search</button>
       </form>
-      <a href="/profiles/<%= user.profile._id %>/anime">My Anime</a>
-      <a href="http://localhost:3000/" <%- title==='Home' ? 'class="active"' : '' %>>Home</a>
+    <a href="/profiles/<%= user.profile._id %>/anime"><button class="MyAnime" type="submit">My Anime</button></a>
+    <a href="http://localhost:3000/" <%- title==='Home' ? 'class="active"' : '' %>><button class="Home" type="submit">Home</button></a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
           <img id="siwg-image" alt="Sign in with Google" />
         </button>
       </a>
+      <a href="../show.ejs"><button class="About" type="submit">About</button></a>
     <% } %>
   </nav>

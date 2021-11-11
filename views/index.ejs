@@ -1,23 +1,15 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
-
 <main>
-  <h1>welcome to Animegram</h1>
+  <h1 class="neonText" >welcome to Animegram</h1>
+  <!-- //   <audio  >
+  //     <source src="../Audio/onePiece.mp3" />
+  //   </audio> -->
 
-  <div class="popup" id="popup-1">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="close-btn" onclick="togglePopup()">&times;</div>
-      <h1>About</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error amet cupiditate eaque ducimus quam nemo atque at veniam cumque, autem eligendi beatae rerum? Fugit, architecto totam. Dicta consequatur quam a.</p>
-    </div>
-  </div>
-  <button onclick="togglePopup()">About</button>
+<audio  autoplay>
+  <source src="../Audio/Netflix-Intro-Sound-Effect.mp3" type="audio/ogg">
+  <source src="../Audio/Netflix-Intro-Sound-Effect.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 </main>
-<% function togglePopup() {%>
-  <%const popup= document.getElementById("popup-1")%>
-  <% popup.classList.toggle("active")%> 
-<% } %>
-
-
 <%- include('./partials/footer') %>

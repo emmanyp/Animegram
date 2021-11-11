@@ -22,13 +22,31 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
+  background:url('https://media1.giphy.com/media/WeyqDp1shHe7u/giphy.gif?cid=ecf05e47yigcbiamd3w6se8l3hmdcxzb4qf0ftqekt74ae0g&rid=giphy.gif&ct=g') center  270px;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 nav {
-  background-color: white;
+  background-image:url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/24d5206b-806e-4071-8935-41313d6956b3/d6ksisp-630890f0-6a63-4c2e-9446-bc6bd1581f44.png'); 
   font-size: 1.6rem;
   display: flex;
   justify-content: space-between;
+  min-height: 150px;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  -webkit-filter: blur(1px);
+-moz-filter: blur(1px);
+-o-filter: blur(1px);
+-ms-filter: blur(1px);
+filter: blur(1px);
+opacity: 0.9;
+}
+
+nav > * {
+  opacity: 1;
 }
 
 main {
@@ -42,38 +60,6 @@ h1 {
   font-size: 3.6rem;
 }
 
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2.4rem;
-}
-
-ul {
-  list-style-type: none;
-}
-
-p, label, li, button, input {
-  font-size: 1.8rem;
-}
-
-label {
-  font-weight: bold;
-}
-
-section {
-  padding: 50px;
-}
-
-a {
-  color: #00B7FF;
-}
-
-pre {
-  font-size: 1.4rem;
-}
-
 nav > a {
   margin: 1rem 3rem;
   text-decoration: none;
@@ -83,65 +69,124 @@ nav > a {
   justify-content: center;
 }
 
-.btn {
-  margin: 1.6rem 0;
-}
-
-.link {
-  padding: 1rem 0;
-  font-size: 1.8rem;
-  display: inline-block;
-}
-
-.profile-avatar {
-  margin-top: 50px;
-}
-.popup .overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: lavender;
-  z-index: 1;
-  display: none;
-}
-
-.popup .content{
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: #fff;
-  width: 450px;
-  height: 220px;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-
-}
-
-.popup .close-btn{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  background: #222;
+.Logout{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
   color: #fff;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px 0 0 4px;
+  font-weight: bolder;
+
+}
+.Animeists{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 3px 0 0 3px;
+}
+.MyAnime{
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0 3px 3px 0;
+}
+.Home{
+  /* outline: yellow;
+  border:3px solid rgb(214, 102, 11) ;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px; */
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0 3px 3px 0;
+    border-radius: 3px 0 0 3px;
+}
+.Search {
+  width: 300px;
+  height: 40px;
+  margin:  auto;
+  background: #444;
+  background: rgba(0,0,0,.2);
+  border-radius:  3px;
+  border: 1px solid #fff;
+  border-radius: 3px 0 0 3px;
+}
+  input {
+    width: 195px;
+    padding: 10px 5px;
+    float: left;
+    color: #ccc;
+    border: 0;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+  }
+  .searchButton {
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0 3px 3px 0;
+  }
+  button:hover {
+      background: #fff;
+      color:#444;
+    }
+    button:active {
+      box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+    }
+    button:focus {
+      outline: 0;
+    }
+  
+
+  
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color:yellow;
 }
 
-.popup .active .overlay{
-  display: block;
-}
-
-.popup .active .content{
-  transition: all 300ms ease-in-out;
-  transform: translate(-50%, -50%) scale(1);
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px rgb(238, 255, 0),
+      0 0 80px rgb(251, 255, 0),
+      0 0 90px rgb(255, 251, 0),
+      0 0 100px rgb(238, 255, 0),
+      0 0 150px rgb(251, 255, 0);
+  
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
 }
