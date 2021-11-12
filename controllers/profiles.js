@@ -97,7 +97,10 @@ function createReview(req, res) {
 		.then((profile) => {
 			const anime = profile.anime.id(req.params.animeId)
 			anime.reviews.push(req.body)
-			profile.save();
+			profile.save()
+			.then(() => {
+					res.redirect(`/profiles/${req.user.profile._id}/anime/${anime._id}`);
+				})
 		})
 		.catch((err) => {
 			console.log(err);
