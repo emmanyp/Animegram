@@ -21,6 +21,7 @@ body {
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family:'Zen Antique Soft', "Helvetica Neue", sans-serif;
   margin: 0;
+  background:url('') center  270px;
   background-repeat: no-repeat;
   background-color: black;
   align-items: center;
