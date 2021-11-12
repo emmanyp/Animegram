@@ -60,7 +60,9 @@ function animeIdx(req, res) {
 }
 
 function animeShow(req, res) {
-	Profile.findById(req.params.profileId).then((profile) => {
+	Profile.findById(req.params.profileId)
+	.populate('anime.reviews.author')
+	.then((profile) => {
 		// console.log(profile);
 		let index = profile.anime.findIndex(
 			(item) => item._id == req.params.animeId
@@ -90,6 +92,7 @@ function deleteAnime(req, res) {
 }
 
 function createReview(req, res) {
+	req.body.author= req.user.profile._id
 	Profile.findById(req.user.profile._id)
 		.then((profile) => {
 			const anime = profile.anime.id(req.params.animeId)

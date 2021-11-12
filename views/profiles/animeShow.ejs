@@ -48,6 +48,7 @@
                       <th>Date</th>
                       <th>Review</th>
                       <th>Rating</th>
+                      <th>Author</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,6 +63,9 @@
                             <td>
                               <%= review.rating %>
                             </td>
+                            <td>
+                              <img src="<%= review.author.avatar%>" alt="<%= review.author.avatar%>">
+                              </td>
                             <td>
                               <% if (user.profile._id.equals(profile._id)) { %>
                                 <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
