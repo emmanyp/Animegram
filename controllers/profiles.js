@@ -114,7 +114,7 @@ function deleteReview(req, res) {
 				anime.reviews.remove({ _id: req.params.reviewId })
 				profile.save()
 				.then(() => {
-					res.redirect(`/profiles/${req.user.profile._id}`);
+					res.redirect(`/profiles/${req.user.profile._id}/anime/${anime._id}`);
 				})
 			})
 			.catch((err) => {
