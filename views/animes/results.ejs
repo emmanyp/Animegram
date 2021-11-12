@@ -1,17 +1,18 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/animes/results.css">
   <%- include('../partials/nav') %>
     <main>
-        <h1>Search Results</h1>
+        <h1 class="neonText">Search Results</h1>
           <%anime.forEach(anime => {%>
             <h2><%= anime.title%></h2>
             <img src="<%= anime.image_url%>" alt='<%= anime.name %> '>
-            <p><%= anime.synopsis %></p>
-            <h2><%= anime.type %></h2>
+            <p> Synopsis:<br> <%= anime.synopsis %></p>
+            <h2>Type:<br>  <%= anime.type %></h2>
             <h2>
-              <%= anime.episodes %>
+              Episodes:<br> <%= anime.episodes %>
             </h2>
             <h2>
-              <%= anime.score %>
+              Score <br> <%= anime.score %>
             </h2>
             <form action="/profiles/anime" method="POST">
             <input type="text" name="title" hidden value="<%= anime.title %> ">
@@ -25,7 +26,7 @@
             
             <input type="text" name="imageUrl" hidden value="<%= anime.image_url%>">
             <input type="text" name="synopsis" hidden value="<%= anime.synopsis%>">
-            <button type="submit">Add to Collection</button>
+            <button class="btn" type="submit">Add to Collection</button>
             </form>
           <% }) %>
     </main>

@@ -62,7 +62,7 @@ nav > a {
   cursor: pointer;
   height: 40px;
   width: 100px;
-  color: #fff;
+  color:yellow;
   background: transparent;
   font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -78,7 +78,7 @@ nav > a {
   cursor: pointer;
   height: 40px;
   width: 100px;
-  color: #fff;
+  color: yellow;
     background: transparent;
     font-weight: bolder;
     border: 1px solid #fff;
@@ -96,7 +96,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color: yellow;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -112,7 +112,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color: yellow;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -139,10 +139,10 @@ nav > a {
 
 }
   input {
-    width: 195px;
+    width: 160px;
     padding: 10px 5px;
     float: left;
-    color: #ccc;
+    color: yellow;
     border: 0;
     background: transparent;
     border-radius: 3px 0 0 3px;
@@ -155,7 +155,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color: yellow;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -166,7 +166,7 @@ nav > a {
 
   }
   button:hover {
-      background: #fff;
+      background:yellow;
       color:#444;
     }
     button:active {

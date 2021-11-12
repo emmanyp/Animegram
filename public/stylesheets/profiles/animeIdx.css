@@ -60,7 +60,7 @@ nav > a {
   cursor: pointer;
   height: 40px;
   width: 100px;
-  color: #fff;
+  color: seagreen;
   background: transparent;
   font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -76,7 +76,7 @@ nav > a {
   cursor: pointer;
   height: 40px;
   width: 100px;
-  color: #fff;
+  color: seagreen;
     background: transparent;
     font-weight: bolder;
     border: 1px solid #fff;
@@ -94,7 +94,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color: seagreen;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -110,7 +110,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color: seagreen;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -137,7 +137,7 @@ nav > a {
 
 }
   input {
-    width: 195px;
+    width: 160px;
     padding: 10px 5px;
     float: left;
     color: #ccc;
@@ -153,7 +153,7 @@ nav > a {
     cursor: pointer;
     height: 40px;
     width: 100px;
-    color: #fff;
+    color:seagreen;
     background: transparent;
     font-weight: bolder;
     backdrop-filter: blur(16px) saturate(200%);
@@ -164,7 +164,7 @@ nav > a {
 
   }
   button:hover {
-      background: #fff;
+      background:rgb(66, 207, 127);
       color:#444;
     }
     button:active {
@@ -199,7 +199,7 @@ nav > a {
 }
 .neonText {
   animation: flicker 1.5s infinite alternate;
-  color:orange;
+  color:seagreen;
 }
 
 @keyframes flicker {
@@ -210,11 +210,11 @@ nav > a {
       0 0 4px #fff,
       0 0 11px #fff,
       0 0 19px #fff,
-      0 0 40px rgb(255, 145, 0),
-      0 0 80px rgb(251, 255, 0),
-      0 0 90px rgb(255, 251, 0),
-      0 0 100px rgb(255, 166, 0),
-      0 0 150px rgb(255, 166, 0);
+      0 0 40px rgb(26, 150, 10),
+      0 0 80px rgb(60, 255, 0),
+      0 0 90px rgb(136, 255, 0),
+      0 0 100px rgb(72, 255, 0),
+      0 0 150px rgb(21, 255, 0);
   
   }
   20%, 24%, 55% {        

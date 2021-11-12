@@ -1,13 +1,12 @@
 <%- include('../partials/html-head') %>
+
+<link rel="stylesheet" href="/stylesheets/profiles/show.css">
   <%- include('../partials/nav') %>
 
     <main>
       <% if (profile.avatar) { %>
-        <div>
-          <img class="profile-avatar" src="<%= profile.avatar %>" alt="<%= profile.name %> avatar">
-        </div>
         <% } %>
-        <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+        <h1 class="neonText">It's <%= isSelf ? "you" : profile.name %>!</h1>
         <% profile.anime.forEach(an => {%>
           <div>
               <h2>

@@ -1,17 +1,16 @@
 <%- include('../partials/html-head') %>
-
 <link rel="stylesheet" href="/stylesheets/profiles/animeShow.css">
 
   <%- include('../partials/nav') %>
     <main>
-      <h1>Anime Details</h1>
+      <h1 class="neonText" >Anime Details</h1>
       <h2>
         <%= anime.title%>
       </h2>
       <img src="<%= anime.imageUrl%>" alt='<%= anime.name %> '>
-      <p>
+      <h2> <strong> Synopsis:</strong> 
         <%= anime.synopsis %>
-      </p>
+      </h2>
       <h2>
         <%= anime.type %>
       </h2>

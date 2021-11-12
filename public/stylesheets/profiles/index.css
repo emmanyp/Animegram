@@ -1,0 +1,201 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+    font-size: 62.5%
+}
+
+body {
+  /* Use a system font, if none are available use an available sans-sarif font */
+  font-family:'Zen Antique Soft', "Helvetica Neue", sans-serif;
+  margin: 0;
+  background:url('') center  270px;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+nav {
+  background-image:url('https://images3.alphacoders.com/104/1049958.jpg'); 
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 150px;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+h1 {
+  font-size: 3.6rem;
+  text-align: center;
+  margin-top: 25px;
+}
+h2{
+  font-size: 2.6rem;
+  text-align: center;
+}
+nav > a {
+  margin: 1rem 3rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Logout{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  color: rgb(0, 255, 221);;
+  background: transparent;
+  font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
+}
+.Animeists{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  color: rgb(0, 255, 221);;
+    background: transparent;
+    font-weight: bolder;
+    border: 1px solid #fff;
+    border-radius: 3px 0 0 3px;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
+}
+.MyAnime{
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color:rgb(0, 255, 221);;
+    background: transparent;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
+}
+.Home{
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color: rgb(0, 255, 221);;
+    background: transparent;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
+}
+.Search {
+  width: 300px;
+  height: 40px;
+  margin:  auto;
+  background: #444;
+  background: rgba(0,0,0,.2);
+  border-radius:  3px;
+  border: 1px solid #fff;
+  border-radius: 3px 0 0 3px;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.6);
+
+}
+  input {
+    width: 160px;
+    padding: 10px 5px;
+    float: left;
+    color: #ccc;
+    border: 0;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+  }
+  .searchButton {
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    color: rgb(0, 255, 221);;
+    background: transparent;
+    font-weight: bolder;
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.6);
+
+  }
+  button:hover {
+      background:rgb(0, 255, 221);
+      color:#444;
+    }
+    button:active {
+      box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+    }
+    button:focus {
+      outline: 0;
+    }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+    margin: 25px 20px 0px 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+    background-color: black;
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.content{
+  font-size: 1.8rem;
+  text-align: center;
+  height: 20px;
+  color:rgb(0, 255, 221);
+
+}
