@@ -36,5 +36,15 @@ https://animegram.herokuapp.com/
 
  API 
 
+## Future Endeavors: 
+
+ Delete my list
+
+  Add anime theme songs to different pages 
+
+ Enabling other uses to leave a review on my list 
+
+ Dark/Light Mood
+
 ## Credits:
 Jikan - Unofficial MyAnimeList.net REST API
