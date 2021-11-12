@@ -3,7 +3,6 @@ import { Profile } from '../models/profile.js';
 function index(req, res) {
 	Profile.find({})
 		.then((profiles) => {
-			// console.log(profiles)
 			res.render('profiles/index', {
 				profiles,
 				title: 'Profiles',
@@ -17,6 +16,7 @@ function index(req, res) {
 
 function show(req, res) {
 	Profile.findById(req.params.id)
+		.populate('anime.reviews.author')
 		.then((profile) => {
 			Profile.findById(req.user.profile._id).then((self) => {
 				const isSelf = self._id.equals(profile._id);

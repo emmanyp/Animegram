@@ -24,6 +24,7 @@
                     <th>Date</th>
                     <th>Review</th>
                     <th>Rating</th>
+                    <th>Author</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,9 @@
                       </td>
                       <td>
                         <%= review.rating %>
+                      </td>
+                      <td>
+                        <img src="<%= review.author.avatar%>" alt="<%= review.author.avatar%>">
                       </td>
                     </tr>
                     <% }) %>
