@@ -82,7 +82,7 @@ function deleteAnime(req, res) {
 				profile.anime.remove(req.params.animeId);
 				profile.save()
 				.then(() => {
-					res.redirect(`/profiles/${req.user.profile._id}`);
+					res.redirect(`/profiles/${req.user.profile._id}/anime`);
 				});
 		})
 		.catch((err) => {
