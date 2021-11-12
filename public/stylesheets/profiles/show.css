@@ -67,12 +67,15 @@ table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
   text-align: center;
+  border-radius:20px;
+  background-color: rgb(193, 232, 248);
 }
 
 table td {
   padding: 10px;
   text-align: center;
-  background-color: rgb(193, 232, 248);
+  background-color: rgb(193, 232, 248, 0.5);
+  border-radius:20px;
 }
 nav > a {
   margin: 1rem 3rem;

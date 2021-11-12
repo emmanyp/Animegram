@@ -20,12 +20,12 @@
       <h2>
         <%= anime.score %>
       </h2>
-        <h2>Reviews</h2>
-        <% if (user) { %>
-          <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews" method="POST">
-              <label for="content-textarea">Review:</label>
+      <% if (user) { %>
+        <form class="revirew-form" action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews" method="POST">
+          <h2 id="logo">Reviews</h2>
+          <label class="review" for="content-textarea">Review:</label>
               <textarea name="content" id="content-textarea"></textarea>
-              <label for="rating-select">Rating:</label>
+              <label class="ratings" for="rating-select">Rating:</label>
               <select name="rating" id="rating-select">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="⭐">⭐</option>
@@ -34,7 +34,7 @@
                 <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
                 <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
               </select>
-              <button type="submit">Add Review</button>
+              <button class="review-btn" type="submit">Add Review</button>
             </form>
               <% } %>
               <% if (anime.reviews.length) { %>
@@ -48,6 +48,7 @@
                       <th>Review</th>
                       <th>Rating</th>
                       <th>Author</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -68,7 +69,7 @@
                             <td>
                               <% if (user.profile._id.equals(profile._id)) { %>
                                 <form action="/profiles/<%= profile._id %>/anime/<%= anime._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                                  <button class="btn" type="submit">Delete 💀</button>
+                                  <button class="btn-delete" type="submit">Delete 💀</button>
                                 </form>
                                 <% } %>
                             </td>
